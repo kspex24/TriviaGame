@@ -48,16 +48,28 @@ console.log(quizContent)
 var correctCount = 0;
 var incorrectCount = 0;
 var unAnsweredCount = 0;
-var questionBank = [];
+var userChoice = [];
+var checkedButtons = [];
+var answers = [];
 
 var timeup;
+var create; 
 
 // //  Start on click of "Start Quiz" button. Call function to display quiz content.
 $("#startquiz").on("click", function() {
   
       event.preventDefault();
-      $("#buttons").hide();
+      $("#startquiz").hide();
+
+      var newButton = $("<button/>");
+      $(newButton).attr("class","btn btn-info btn-lg center-block");
+      $(newButton).attr("id","submitAnswers");
+      $(newButton).text("Submit Answers");
+      $("#buttons").append(newButton);   
+
       displayQuizContent();
+    
+
  
 
   //  Set the button alert's timeout to run three seconds after the function's called. When time expires, clear the contents of the divs,  display game over message and results
@@ -65,14 +77,20 @@ $("#startquiz").on("click", function() {
         
         $("#quiz-content").empty();
         $("#question").empty();
-        $("#score").html("Game Over! Results:");
+         $("#submitAnswers").hide();
+        $("#score").html("Game Over!<br>Results:");
+        
+        scoreCheck();
+       
         $("#buttons").show();
-      }, 30000);
+      }, 10000);
     }); 
 
 //Function to display the questions and choices (with radio buttons)
     
       function displayQuizContent ()  {
+
+       
 
           for (var i = 0; i < quizContent.length; i++) {
 
@@ -84,55 +102,32 @@ $("#startquiz").on("click", function() {
 
               $("#question").append("<br>"+quizContent[i].question+"<br>");
 
+                    var newForm = $("<form/>");
+
+                        $("#question").append(newForm);
+
                         for (var j = 0; j < 4; j++) {
 
                                 var labelname = quizContent[i].choices[j];
 
                                   var value = j;
 
-                                    var create = $('<form><input type="radio" name="opt-radio" value="'+value+'"><label class="in-line">'+labelname+'</label></form>');
+
+                                    var create = $('<input type="radio" name="optradio" value="'+value+'"><label class="radio-inline">'+labelname+'</label>');
                                       
-                                    $("#question").append(create);
+                                    $(newForm).append(create);
                                  
-                                             console.log("value: " + value)
-            }             
-                         }
-                  
+                                             console.log("value: " + value);                                                                              
+                        }                        
+                 }    
+                           
           }
 
+          function scoreCheck()      {
+                
 
-        //   var main = $("body");
-        //   var btns = main.find("#buttons");
-        //   var newBtn = $("#buttons")
-
-        //  // 3. Then give each "letterBtn" the following classes: "letter-button" "letter" "letter-button-color".
-        //  newBtn.addClass("btn btn-info btn-lg center-block");
- 
-        //  // 5. Then give each "letterBtns" a text equal to "letters[i]".
-        //  newBtn.text("Submit Answers");
- 
-        //  // 6. Finally, append each "letterBtn" to the "#buttons" div (provided).
-        //  btns.append(newBtn);
+                            $("#score").append("<br>"+"Score: 100%"+"<br>");
 
 
-
- 
-
-// Submit button for finishing quiz
-
-// var submitAnswers = <button type="button" class="btn btn-primary">Submit</button>
-
-//need function to compare correct answer to user answer
-
-
-//counter for correct, incorrect and unanswered
-
-
-
-//Display quiz results
-
-
-
-
-
-//Close document ready function
+                       
+                        }
