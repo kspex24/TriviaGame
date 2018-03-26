@@ -28,11 +28,6 @@ body {
 }
 
 
-}
-
-
-
-
 p { 
     color: black;
     font-size: 22px;
@@ -49,10 +44,19 @@ p {
 }
 
 /* Change H2 header to teal */
-h2, #score { 
+h2 { 
     color: purple;
     text-align: center;
-    font-size: 48px;
+    font-size: 46px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    padding-bottom: 10px;
+}
+
+#score { 
+    color: purple;
+    text-align: center;
+    font-size: 26px;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     padding-bottom: 10px;
@@ -62,9 +66,17 @@ h3 {
     color: black;
     text-align: center;
     font-weight: bold;
-    paddng-bottom: 10px;
+    padding-bottom: 10px;
 }
 
+.radio-inline {
+
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+
+}
 .in-line {
 
     color: black;
@@ -73,6 +85,7 @@ h3 {
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding-bottom: 2px;
+   
 
 }
 
@@ -81,6 +94,11 @@ h3 {
     background: #4aaaa5; 
     color: #ffffff;
     font-size: 16px;
+}
+
+#submitAnswers {
+    margin-bottom: 20px;
+    margin-top: 50px;
 }
 
 
