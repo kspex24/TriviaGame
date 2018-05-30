@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <title>Trivia Game</title>
 
              <!--Link to reset stylesheet-->
@@ -25,21 +26,16 @@
 </head>
 <body>
 
-
-
-  <div class="container" id="title">
-        <h2>Test Your TV Trivia</h2>
+    <div class="container" id="title">
+       <h2>Test Your TV Trivia <span>  <div id="status"> </div></span> </h2>
 
         <div class="wrapper" id="quiz-content">
-                  <p><h3>Are you a tv expert? Take this quiz and find out!  You have 30 seconds to submit your answers.  Good luck!</h3></p>           
+                  <p id="info"><h3>Are you a tv expert? Take this quiz and find out!  You have 30 seconds to submit your answers.  Good luck!</h3></p>           
         </div>
 
-              <div id="status"></div>
+            
         
-              <form id="question">
-
-
-                
+              <form role="form" id="question">
 
               </form>
                <br>
@@ -62,12 +58,11 @@
               
 
 
-
 <!--CDN jquery-->
   <!-- jQuery -->
 
   
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
 </html>
